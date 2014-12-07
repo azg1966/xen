@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block main %}
+  <div id="sl1" class="slide"></div>
+  <div id="sl2" class="slide"></div>
+  <div class="audio-wrapper">
+    <button id="btnPlay"><i class="fa-play fa-2x"></i></button>
+  </div>
+  <div class="indicator-container">
+    <div class="indicator">
+      <h1>88</h1>
+      <p>Nullam libero mauris, consequat</p>
+    </div>
+    <audio>
+      <source src="/static/audio/0.mp3"/>
+      <source src="/static/audio/0.ogg"/>
+      Your browser does not support HTML5 audio.
+    </audio>
+  </div>
+  <script src="/static/js/script.js"></script>
+  <script>
+   var audio = $('audio').get(0);
+   $('#btnPlay').bind('click', function(){playPause($('#btnPlay'));});
+   var images = {{ images|tojson }};
+   var lastImage = 0;
+   /* var audio = {{ audio|tojson }}; */
+   var interval = 15;
+   var _image = new Image();
+   _image.onload = function(){
+     $('#sl1').css({
+       'background-image':'url('+images[0]+')',
+       'opacity':'1'
+     });
+   };
+   function iPos(){
+     _image.src = images[lastImage];
+     var wH = $(window).height();
+     var wW = $(window).width();
+     var iH = $('.indicator-container').height();
+     $('.indicator-container').css({'top': wH/2-iH/2, 'opacity': '1'});
+     $('#sl1').css('height', wH);
+     $('#sl2').css('height', wH);
+   }
+   $(window).ready(
+     function(){
+       iPos();
+       var w = new Watch($('.indicator-container').children('.indicator').eq(0));
+       w.start();
+       setTimeout(function(){
+         createSlider($('#wrap'), true);
+       }, interval*1000);
+       playPause($('#btnPlay'));
+     }
+   );
+   $(window).resize(
+     iPos
+   )
+  </script>
+{% endblock %}

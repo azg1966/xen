@@ -1,0 +1,224 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+body{
+  overflow-x:hidden;
+}
+
+html, body {height: 100%;}
+
+#wrap {
+  min-height: 100%;
+  margin: 0 auto;
+  position: relative;
+  /* background-image: url(/static/img/222_6026_jpg.jpg); */
+  background-size: auto 100%;
+  /* background-position: 0 50%; */
+  background-color: #727786;
+}
+
+
+footer{
+  /* background-color: rgba(255,255,255,.3);
+     box-shadow: 0 0 5px rgba(100, 100, 100,.8);*/
+  box-sizing: border-box;
+  position: relative;
+  margin: -30px auto auto auto;
+  height: 30px;
+  clear: both;
+  width: auto;
+  max-width: 940px;
+  font-family: 'PT Sans', sans-serif;
+  text-shadow: 0 0 2px rgba(50, 50, 50,.8);
+  color: white;
+  text-align:center;
+  padding: 2px 10px;
+}
+
+header{
+  margin: 0 auto;
+  background-color: rgba(255,255,255,.3);
+  width: auto;
+  max-width: 940px;
+  font-family: 'PT Sans', sans-serif;
+  text-shadow: 0 0 2px rgba(50, 50, 50,.8);
+  box-shadow: 0 0 5px rgba(100, 100, 100,.8);
+  color: white;
+}
+
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+}
+
+footer p{
+  line-height: 13px;
+}
+
+.indicator-container{
+  position: relative;
+  top: 0;
+  opacity: 0;
+  width: auto;
+  max-width: 940px;
+  margin: 0 auto;
+  transition: top 1s, opacity 1.5s;
+}
+
+.indicator-container:before,
+.indicator-container:after{
+  content: " ";
+  display: table;
+}
+
+.indicator-container:after{
+  clear: both;
+}
+
+.indicator-container{
+  *zoom: 1;
+}
+
+.indicator{
+  border: 3px solid rgba(255,255,255,.7);
+  /* width: 30.66%;
+     margin: 0 0.5%;
+     float: left; */
+  width: 40%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,.25);
+  padding: 5px;
+  color: rgba(255,255,255,.9);
+  box-shadow: inset 0 0 3px rgba(100, 100, 100,.6), 0 0 5px rgba(100, 100, 100,.8);
+  text-shadow: 0 0 3px rgba(0, 0, 0, .8), 0 0 2px rgba(0, 0, 0, .8);
+  font-family: 'PT Sans', sans-serif;
+}
+
+
+/* .indicator:first-child{
+   margin-left: 3%;
+   }
+
+   .indicator:last-child{
+   margin-right:3%;
+   } */
+.audio-wrapper{
+  margin: 20px;
+  position: relative;
+  float: right;
+}
+
+#btnPlay{
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 0 3px rgba(0, 0, 0, .8), 0 0 2px rgba(0, 0, 0, .8);  
+}
+
+.indicator h1{
+  font-weight: bold;
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.indicator p{
+  text-shadow: 0 0 4px rgba(0, 0, 0, 1), 0 0 2px rgba(0, 0, 0, 1), 0 0 1px rgba(0, 0, 0, 1);
+  text-align: center;
+  font-size: 1em;
+}
+
+.indicator h1 span{
+  transition: opacity 0.5s;
+}
+
+.slide{
+  position: absolute;
+  width: 100%;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 2s linear;
+}
+
+
+@media (min-width: 481px) and (max-width: 768px){
+
+  .indicator{
+    float: none;
+    width: 50%;
+  }
+
+  .indicator h1{
+    font-size: 2.8em;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .indicator{
+    float: none;
+    width: 70%;
+    margin: 10px auto;
+  }
+
+  .indicator h1{
+    font-size: 2.7em;
+  }
+
+  /* .indicator:first-child{
+     margin-left: auto;
+     }
+
+     .indicator:last-child{
+     margin-right:auto;
+     } */
+  
+}
